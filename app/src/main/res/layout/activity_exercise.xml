@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:theme="@style/BaseTheme"
-        app:titleTextColor="#C4C4C4"
         android:background="#FFFFFF"/>
     
     <LinearLayout
@@ -71,6 +70,91 @@
     </LinearLayout>
 
     </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"
+            android:text="Upcoming Exercise"
+            android:textColor="@color/colorHighLighted"/>
+        <TextView
+            android:id="@+id/upcomingExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="22sp"
+            android:text="Jumping Jacks"
+            android:textColor="@color/colorPrimaryDark"/>
+
+    </LinearLayout>
+<!--INITIALLY THE BELOW LAYOUT IS INVISIBLE THAT WILL LATER ON TURNED VISIBLE-->
+    <LinearLayout
+        android:id="@+id/llOnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myToolBar"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical"
+        android:visibility="invisible">
+        <ImageView
+            android:id="@+id/evImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="Image"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_jumping_jacks"
+            />
+        <TextView
+            android:id="@+id/exerciseName"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/colorAccent"
+            android:text="DO FIVE"/>
+
+        <FrameLayout
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/circular_accent_border"
+            android:layout_marginTop="10dp">
+
+            <ProgressBar
+                android:layout_height="100dp"
+                android:layout_width="100dp"
+                android:background="@drawable/circular_progress_gray"
+                android:id="@+id/onProgressBar"
+                android:rotation="-90"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:progress="100"
+                android:max="30"
+                android:indeterminate="false"
+                android:layout_gravity="center"
+                style="?android:attr/progressBarStyleHorizontal"/>
+            <!--maximum division of progress bar are 30-->
+
+            <LinearLayout
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:background="@drawable/item_circular_color_accent_background"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvOnTimer"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textColor="#FFFFFF"
+                    tools:text="30"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </LinearLayout>
 </RelativeLayout>
