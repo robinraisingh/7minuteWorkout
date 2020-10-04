@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/colorWhite"
+    tools:context=".exerciseActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/myToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:theme="@style/BaseTheme"
+        app:titleTextColor="#C4C4C4"
+        android:background="#FFFFFF"/>
+    
+    <LinearLayout
+        android:id="@+id/llRestLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/myToolBar"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:textColor="@color/colorAccent"
+            android:text="GET READY FOR"/>
+
+        <FrameLayout
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/circular_accent_border"
+            android:layout_marginTop="10dp">
+
+        <ProgressBar
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:background="@drawable/circular_progress_gray"
+            android:id="@+id/progressBar"
+            android:rotation="-90"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:progress="100"
+            android:max="10"
+            android:indeterminate="false"
+            android:layout_gravity="center"
+            style="?android:attr/progressBarStyleHorizontal"/>
+            <!--maximum division of progress bar are 10-->
+
+        <LinearLayout
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:background="@drawable/item_circular_color_accent_background"
+            android:gravity="center"
+            android:layout_gravity="center">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/tvTimer"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#FFFFFF"
+            tools:text="10"/>
+
+    </LinearLayout>
+
+    </FrameLayout>
+
+    </LinearLayout>
+</RelativeLayout>

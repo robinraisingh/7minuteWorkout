@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="picturePadding">5dp</dimen>
+    <dimen name="main_screen_image_height">150dp</dimen>
+    <dimen name="start_button_label_textsize">22dp</dimen>
+
+</resources>
