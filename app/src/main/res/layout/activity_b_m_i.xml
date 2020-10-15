@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BMIActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:id="@+id/toolbar_bmi_activity"/>
+
+    <!--TODO(Step 1 : Designing the METRIC UNIT VIEW in BMI calculator feature.)-->
+
+
+    <!--START-->
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/llUnitsView"
+        android:padding="10dp"
+        android:layout_below="@id/toolbar_bmi_activity">
+<!--RADIO BUTTON WILL START FROM HERE -->
+<!-- WITH CUSTOM BG FOR WHOLE GROUP,ORIENTATION IS HORIZONTAL,below the toolbar(in relative layout)  -->
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@drawable/drawable_radio_group_tab_background"
+            android:id="@+id/rgUnits"
+            android:layout_margin="10dp"
+            android:layout_below="@id/toolbar_bmi_activity">
+
+            <!--radio button,
+                CUSTOM BACKGROUND IS NOT SET BY THE KOTLIN CODE BUT
+                BY THE SELECTER DRAWABLE-->
+        <RadioButton
+            android:layout_height="35dp"
+            android:layout_width="0dp"
+            android:background="@drawable/drawable_units_tab_selector"
+            android:id="@+id/rbMetricUnits"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@drawable/drawable_units_tab_text_color_selector"
+            android:text="METRIC UNITS"
+            android:gravity="center"
+            android:checked="true"
+            android:button="@null"
+            android:layout_weight="0.50"/>
+
+        <RadioButton
+            android:layout_height="35dp"
+            android:layout_width="0dp"
+            android:background="@drawable/drawable_units_tab_selector"
+            android:id="@+id/rbUsUnits"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@drawable/drawable_units_tab_text_color_selector"
+            android:text="US UNITS"
+            android:gravity="center"
+            android:checked="false"
+            android:button="@null"
+            android:layout_weight="0.50"/>
+
+    </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tilMetricUnitWeight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <androidx.appcompat.widget.AppCompatEditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/etMetricUnitWeight"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        android:hint="WEIGHT (in kg)"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tilMetricUnitHeight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="10dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/etMetricUnitHeight"
+        android:textSize="16sp"
+        android:inputType="numberDecimal"
+        android:hint="HEIGHT (in cm)"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/llDiplayBMIResult"
+        android:layout_marginTop="25dp"
+        tools:visibility="visible"
+        android:visibility="visible">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tvYourBMI"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:textAllCaps="true"
+        android:text="YOUR BMI"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tvBMIValue"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        tools:text="15.00"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tvBMIType"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        tools:text="Normal"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tvBMIDescription"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        tools:text="Normal"
+        android:gravity="center"/>
+
+</LinearLayout>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@color/colorAccent"
+        android:id="@+id/btnCalculateUnits"
+        android:textSize="18sp"
+        android:layout_marginTop="35dp"
+        android:text="CALCULATE"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="bottom"/>
+
+</LinearLayout>
+
+    <!--END-->
+
+</RelativeLayout>

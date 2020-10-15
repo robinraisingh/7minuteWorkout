@@ -1,5 +1,7 @@
 package com.robinsingh.sevenminuteworkout
 
+import android.app.Dialog
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +13,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_exercise.*
+import kotlinx.android.synthetic.main.dialog_cutom_back_information.*
 import java.lang.Exception
 import java.util.*
 import kotlin.collections.ArrayList
@@ -40,7 +43,7 @@ class exerciseActivity : AppCompatActivity(),TextToSpeech.OnInitListener{
             actionBar.setDisplayHomeAsUpEnabled(true)
         }
         myToolBar.setNavigationOnClickListener {
-            onBackPressed()
+            customDialogBackButton()
         }
 
         exerciseList=Constants.defaultExerciseList()
@@ -120,7 +123,10 @@ class exerciseActivity : AppCompatActivity(),TextToSpeech.OnInitListener{
                     setupRestView()
                 }
                 else{
-                    Toast.makeText(this@exerciseActivity,"well done!",Toast.LENGTH_SHORT).show()
+                    finish()
+
+                    var intent=Intent(this@exerciseActivity,finishActivity::class.java)
+                    startActivity(intent)
                 }
             }
 
@@ -193,6 +199,19 @@ class exerciseActivity : AppCompatActivity(),TextToSpeech.OnInitListener{
         exerciseAdapter= ExerciseAdapter(exerciseList!!,this)
         rvExerciseStatus.adapter=exerciseAdapter
 
+    }
+    private fun customDialogBackButton(){
+        val customDialog= Dialog(this)
+
+        customDialog.setContentView(R.layout.dialog_cutom_back_information)
+        customDialog.tvYes.setOnClickListener {
+            finish()
+            customDialog.dismiss()
+        }
+        customDialog.tvNo.setOnClickListener {
+            customDialog.dismiss()
+        }
+        customDialog.show()
     }
 
 }
